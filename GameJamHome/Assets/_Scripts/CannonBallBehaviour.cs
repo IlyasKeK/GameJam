@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonBallBehaviour : MonoBehaviour {
+public class CannonBallBehaviour : MonoBehaviour
+{
     [SerializeField]
     private Vector2 m_initialForce=new Vector2(1,-1);
 
@@ -16,4 +17,13 @@ public class CannonBallBehaviour : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.GetComponent<SectionCompleteState>())
+        {
+            Debug.Log("Collidedwith Destroyable Object");
+            collision.collider.GetComponent<SectionCompleteState>().DealDamage(200);
+        }
+    }
 }
