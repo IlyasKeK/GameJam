@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         //Calling global event in the end of the round
         //if (null == onEndRound) return;
-
+        Debug.Log("1: "+m_isPlayerOneTurn);
         if (m_isPlayerOneTurn)
         {
             m_player1.ActivatePlayer();

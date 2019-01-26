@@ -113,12 +113,12 @@ public class Cannon : MonoBehaviour {
 
         if (rgdbody != null)
         {
-            rgdbody.velocity = (forwardVec * 20) * _currentFirePower;
+            rgdbody.velocity = (forwardVec) * _currentFirePower;
         }
 
         if (rgdbody2d != null)
         {
-            rgdbody2d.velocity = (forwardVec * 20) * _currentFirePower;
+            rgdbody2d.velocity = (forwardVec) * _currentFirePower;
         }
 
         ShotCannon.Invoke();

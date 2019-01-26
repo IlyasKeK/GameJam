@@ -14,7 +14,7 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
 
     public void Start()
     {
-        Debug.Log("Collider is ready");
+
     }
 
     public override void Enter(IAgent pAgent)
@@ -45,18 +45,21 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
         m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
         HighlightObject(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
         HighlightObject(false);
     }
