@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class SectionCompleteState :AbstractState<SectionFSM>
 {
-    [SerializeField]
-    private int m_healthPoints = 10;
+    private int m_healthPoints;
 
     private SectionFSM m_sectionFSM;
+    private SectionData m_sectionData;
 
-    public void Start()
-    {
-        m_sectionFSM = GetComponent<SectionFSM>();
-        Debug.Log("SectionFSM is ready");
-    }
+
 
     public override void Enter(IAgent pAgent)
     {
         base.Enter(pAgent);
+
+        if(!m_sectionFSM) m_sectionFSM = GetComponent<SectionFSM>();
+        if(!m_sectionData) m_sectionData = GetComponent<SectionData>();
+
+        m_healthPoints = m_sectionData.healthPoint;
     }
 	
 	void Update ()
@@ -33,6 +34,7 @@ public class SectionCompleteState :AbstractState<SectionFSM>
     public void DealDamage(int damage)
     {
         m_healthPoints -= damage;
+        Debug.Log(m_healthPoints);
         if (m_healthPoints <= 0)
         {
             m_healthPoints = 0;
