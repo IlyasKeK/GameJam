@@ -9,8 +9,10 @@ public class CannonBallBehaviour : MonoBehaviour
 
 
     private Rigidbody2D m_rigidbody2D;
+    private GameManager Manager;
 
 	void Start () {
+        Manager = GameManager.Instance();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
 	}
 	
@@ -34,6 +36,7 @@ public class CannonBallBehaviour : MonoBehaviour
         if (collision.collider.GetComponent<SectionCompleteState>())
         {
             collision.collider.GetComponent<SectionCompleteState>().DealDamage(m_damage);
+            if (Manager) { Manager.hitResponseNeighbours(); }
             Destroy(gameObject);
         }
     }

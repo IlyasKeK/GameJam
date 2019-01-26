@@ -2531,9 +2531,9 @@ MonoBehaviour:
   _Debug: 1
   _DebugCannonBall: {fileID: 1000094598341346, guid: 9e5ac3cf2483ca141abd05178cc53098,
     type: 2}
-  _MinFirePower: 1
-  _MaxFirePower: 4
-  _FirePowerIncrementSpeed: 1
+  _MinFirePower: 0.2
+  _MaxFirePower: 3
+  _FirePowerIncrementSpeed: 0.2
   _CannonRotationOffset: -90
   _CannonBallSpawningDistance: 1
   _CanShootPositiveX: 1
@@ -2548,6 +2548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb8ebdb6c2f74f4fad72c36525a1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleSprites:
+  - {fileID: 21300008, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  - {fileID: 21300010, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  AngrySprite: {fileID: 21300012, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  HappySprite: {fileID: 21300014, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  SpriteImage: {fileID: 0}
   sections:
   - {fileID: 1956446327}
   - {fileID: 169171237}
@@ -2724,9 +2730,9 @@ MonoBehaviour:
   _Debug: 1
   _DebugCannonBall: {fileID: 1000094598341346, guid: 9e5ac3cf2483ca141abd05178cc53098,
     type: 2}
-  _MinFirePower: 1
-  _MaxFirePower: 4
-  _FirePowerIncrementSpeed: 1
+  _MinFirePower: 0.2
+  _MaxFirePower: 3
+  _FirePowerIncrementSpeed: 0.2
   _CannonRotationOffset: 0
   _CannonBallSpawningDistance: 1
   _CanShootPositiveX: 0
@@ -2783,6 +2789,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb8ebdb6c2f74f4fad72c36525a1c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IdleSprites:
+  - {fileID: 21300000, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  - {fileID: 21300002, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  AngrySprite: {fileID: 21300004, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  HappySprite: {fileID: 21300006, guid: 40a904b03331cc941801986601a28c32, type: 3}
+  SpriteImage: {fileID: 0}
   sections:
   - {fileID: 509152499}
   - {fileID: 336769376}

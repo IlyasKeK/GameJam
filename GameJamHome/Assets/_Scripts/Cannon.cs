@@ -32,6 +32,7 @@ public class Cannon : MonoBehaviour {
     private GameObject _CannonBall;
     private float _currentFirePower = 0;
     private bool _canFire = false;
+    private Vector3 CachedVelocity;
 
     UnityEvent ShotCannon = new UnityEvent();
 
@@ -49,6 +50,35 @@ public class Cannon : MonoBehaviour {
 
         RotateToWorldPos(Input.mousePosition);
         IsFireDown();
+        DrawProjectileTrajectory();
+    }
+
+    private void DrawProjectileTrajectory()
+    {
+        if (!AllowedtoFire()) return;
+
+        Vector3 forwardVec = transform.right;
+        forwardVec = Quaternion.AngleAxis(-_CannonRotationOffset, Vector3.forward) * forwardVec;
+        Vector3 worldVec = transform.position;
+        Quaternion Rotation = Quaternion.identity;
+
+
+        Vector3 LastKnownPos;
+        for (float i = 0; i < 15; i++)
+        { 
+            if(i == 0)
+            {
+                Debug.DrawLine(transform.position, PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / i));
+                continue;
+            }
+
+            Debug.DrawLine(PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / (i-1)), PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / i));
+        }
+    }
+
+    public Vector3 PlotTrajectoryAtTime(Vector3 start, Vector3 startVelocity, float time)
+    {
+        return start + startVelocity * time + Physics.gravity * time * time * 0.5f;
     }
 
     private void RotateToWorldPos(Vector3 pPos)
@@ -72,6 +102,7 @@ public class Cannon : MonoBehaviour {
 
         if (Input.mousePosition.x > objectpos.x && !_CanShootPositiveX) return false;
         if (Input.mousePosition.x < objectpos.x && _CanShootPositiveX) return false;
+        if (objectpos.y + 30f > Input.mousePosition.y) return false;
 
         return true;
     }
@@ -105,7 +136,6 @@ public class Cannon : MonoBehaviour {
         forwardVec = Quaternion.AngleAxis(-_CannonRotationOffset, Vector3.forward) * forwardVec;
         Vector3 worldVec = transform.position;
         Quaternion Rotation = Quaternion.identity;
-        Debug.Log("trying to spawn shit");
 
         GameObject newCannonBall = Instantiate(_CannonBall, worldVec + forwardVec * _CannonBallSpawningDistance, Rotation);
         Rigidbody rgdbody = newCannonBall.GetComponent<Rigidbody>();
@@ -114,11 +144,13 @@ public class Cannon : MonoBehaviour {
         if (rgdbody != null)
         {
             rgdbody.velocity = (forwardVec * 20) * _currentFirePower;
+            CachedVelocity = (forwardVec * 20) * _currentFirePower;
         }
 
         if (rgdbody2d != null)
         {
             rgdbody2d.velocity = (forwardVec * 20) * _currentFirePower;
+            CachedVelocity = (forwardVec * 20) * _currentFirePower;
         }
 
         ShotCannon.Invoke();

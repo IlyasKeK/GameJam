@@ -61,7 +61,13 @@ public class GameManager : MonoBehaviour
 
         m_isPlayerOneTurn = !m_isPlayerOneTurn;
     }
-
+    
+    public void hitResponseNeighbours()
+    {
+        m_player1.HitResponsePlayer(m_isPlayerOneTurn);
+        m_player2.HitResponsePlayer(!m_isPlayerOneTurn);
+    }
+        
     public static GameManager Instance()
     {
         return m_instance;

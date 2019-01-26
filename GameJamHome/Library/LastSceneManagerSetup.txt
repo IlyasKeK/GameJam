@@ -1,5 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/LoraScene.unity
 - path: Assets/Scenes/IlyasScene.unity
   isLoaded: 1
   isActive: 1
