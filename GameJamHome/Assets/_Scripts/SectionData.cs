@@ -9,6 +9,9 @@ public class SectionData : MonoBehaviour
     public Material m_initialMaterial;
     public Material m_highlightMaterial;
     public Material m_destroyedMaterial;
+    
+    [HideInInspector]
+    public PlayerData playerData;
 
     void Start () {
 		

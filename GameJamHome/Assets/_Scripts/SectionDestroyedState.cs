@@ -47,7 +47,16 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
     {
         Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
-        m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
+
+        if (m_sectionData.playerData.reources - ResourceManager.Instance().repairCost > 0)
+        {
+            //Try to repair section if player has enough resources
+            
+            m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
+            m_sectionData.playerData.reources -= ResourceManager.Instance().repairCost;
+            Debug.Log("Resources left "+m_sectionData.playerData.reources);
+        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
