@@ -26,6 +26,8 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
         if (!m_meshRenderer) m_meshRenderer = GetComponent<MeshRenderer>();
         if (!m_sectionFSM) m_sectionFSM = GetComponent<SectionFSM>();
 
+        GameObject.Instantiate(m_sectionData.explosion, transform.position, transform.rotation);
+
         m_meshRenderer.material = m_sectionData.m_destroyedMaterial;
 
         DisableObject();
@@ -45,7 +47,6 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
 
         if (m_sectionData.playerData.reources - ResourceManager.Instance().repairCost > 0)
@@ -61,14 +62,12 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
         HighlightObject(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSuk");
         if (!isMyTurn) return;
         HighlightObject(false);
     }

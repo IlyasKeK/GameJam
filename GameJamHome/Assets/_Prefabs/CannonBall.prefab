@@ -133,4 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damage: 1
+  m_explosion: {fileID: 1998069852120936, guid: 939609e1fca5e5b4fac4605204a00a96,
+    type: 2}
   lifeTime: 2.46

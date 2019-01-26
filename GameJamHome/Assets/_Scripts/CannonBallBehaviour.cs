@@ -6,7 +6,8 @@ public class CannonBallBehaviour : MonoBehaviour
 {
     [SerializeField]
     private int m_damage=1;
-
+    [SerializeField]
+    private GameObject m_explosion;
 
     private Rigidbody2D m_rigidbody2D;
     private GameManager Manager;
@@ -15,7 +16,7 @@ public class CannonBallBehaviour : MonoBehaviour
     private float m_timeOfConstruction;
 Vector3 lastHitPos;
 
-	void Start () {
+    void Start () {
         Manager = GameManager.Instance();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         Debug.Log("I am created");
@@ -46,6 +47,7 @@ Vector3 lastHitPos;
 
         if (collision.collider.GetComponent<SectionCompleteState>())
         {
+            GameObject.Instantiate(m_explosion,transform.position,transform.rotation);
             collision.collider.GetComponent<SectionCompleteState>().DealDamage(m_damage);
             if (Manager) { Manager.hitResponseNeighbours(); }
             Destroy(gameObject);
@@ -63,4 +65,6 @@ Vector3 lastHitPos;
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(transform.position, 1);
     }
+
+    //IEnumerator DestroyIn(float time)
 }
