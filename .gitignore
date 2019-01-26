@@ -33,3 +33,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 GameJamHome/Temp/UnityLockfile
+
+GameJamHome/Temp/

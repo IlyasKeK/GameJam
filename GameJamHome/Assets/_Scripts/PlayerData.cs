@@ -19,6 +19,7 @@ public class PlayerData : MonoBehaviour {
 
     public void ActivatePlayer()
     {
+        if(!m_cannon) m_cannon = GetComponent<Cannon>();
         m_cannon.ResetFire();
     }
 
