@@ -11,6 +11,8 @@ public class CannonBallBehaviour : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private GameManager Manager;
 
+    public float lifeTime = 5;
+    private float m_timeOfConstruction;
 Vector3 lastHitPos;
 
 	void Start () {
@@ -18,10 +20,15 @@ Vector3 lastHitPos;
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         Debug.Log("I am created");
         GameManager.Instance().ResolveCannonBallShot();
+        m_timeOfConstruction = Time.time;
 	}
 	
 	void Update () {
-		
+        if (Time.time > m_timeOfConstruction + lifeTime)
+        {
+            Destroy(gameObject);
+        }
+        else { Debug.Log(Time.time-(m_timeOfConstruction + lifeTime)); }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)

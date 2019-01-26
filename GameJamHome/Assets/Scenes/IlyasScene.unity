@@ -2568,9 +2568,9 @@ MonoBehaviour:
   _Debug: 1
   _DebugCannonBall: {fileID: 1000094598341346, guid: 9e5ac3cf2483ca141abd05178cc53098,
     type: 2}
-  _MinFirePower: 0.2
-  _MaxFirePower: 3
-  _FirePowerIncrementSpeed: 0.2
+  _MinFirePower: 10
+  _MaxFirePower: 30
+  _FirePowerIncrementSpeed: 2
   _CannonRotationOffset: -90
   _CannonBallSpawningDistance: 1
   _CanShootPositiveX: 1
@@ -2769,9 +2769,9 @@ MonoBehaviour:
   _Debug: 1
   _DebugCannonBall: {fileID: 1000094598341346, guid: 9e5ac3cf2483ca141abd05178cc53098,
     type: 2}
-  _MinFirePower: 0.2
-  _MaxFirePower: 3
-  _FirePowerIncrementSpeed: 0.2
+  _MinFirePower: 10
+  _MaxFirePower: 30
+  _FirePowerIncrementSpeed: 2
   _CannonRotationOffset: 0
   _CannonBallSpawningDistance: 1
   _CanShootPositiveX: 0
