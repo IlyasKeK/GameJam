@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SectionData))]
 public class SectionFSM : MonoBehaviour,IAgent
 {
     private Fsm<SectionFSM> m_fsm;
