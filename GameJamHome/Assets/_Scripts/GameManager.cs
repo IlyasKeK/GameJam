@@ -62,6 +62,12 @@ public class GameManager : MonoBehaviour
         m_isPlayerOneTurn = !m_isPlayerOneTurn;
     }
 
+    public void ResolveCannonBallShot()
+    {
+        m_player1.ActivateSections(true);
+        m_player2.ActivateSections(true);
+    }
+
     public static GameManager Instance()
     {
         return m_instance;

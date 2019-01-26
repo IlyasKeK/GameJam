@@ -12,6 +12,8 @@ public class CannonBallBehaviour : MonoBehaviour
 
 	void Start () {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        Debug.Log("I am created");
+        GameManager.Instance().ResolveCannonBallShot();
 	}
 	
 	void Update () {
