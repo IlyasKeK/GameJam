@@ -68,11 +68,11 @@ public class Cannon : MonoBehaviour {
         { 
             if(i == 0)
             {
-                Debug.DrawLine(transform.position, PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / i));
+                Debug.DrawLine(transform.position, PlotTrajectoryAtTime(this.transform.position, (forwardVec) * _currentFirePower, 2f / i));
                 continue;
             }
 
-            Debug.DrawLine(PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / (i-1)), PlotTrajectoryAtTime(this.transform.position, (forwardVec * 20) * _currentFirePower, 0.4f / i));
+            Debug.DrawLine(PlotTrajectoryAtTime(this.transform.position, (forwardVec) * _currentFirePower, 2f / (i-1)), PlotTrajectoryAtTime(this.transform.position, (forwardVec) * _currentFirePower, 2f / i));
         }
     }
 

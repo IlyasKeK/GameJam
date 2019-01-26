@@ -26,9 +26,9 @@ Vector3 lastHitPos;
 	void Update () {
         if (Time.time > m_timeOfConstruction + lifeTime)
         {
+            //LifeTime expiring check
             Destroy(gameObject);
         }
-        else { Debug.Log(Time.time-(m_timeOfConstruction + lifeTime)); }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
