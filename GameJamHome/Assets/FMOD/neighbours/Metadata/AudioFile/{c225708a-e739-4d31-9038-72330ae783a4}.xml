@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c225708a-e739-4d31-9038-72330ae783a4}">
+        <property name="assetPath">
+            <value>CHORUS B INSTRUMENTS.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>10.549455782312926</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a0119123-d220-48d9-b13b-81fc7faea5cc}</destination>
+        </relationship>
+    </object>
+</objects>

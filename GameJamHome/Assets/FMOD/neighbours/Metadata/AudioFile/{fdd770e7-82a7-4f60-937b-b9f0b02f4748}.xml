@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{fdd770e7-82a7-4f60-937b-b9f0b02f4748}">
+        <property name="assetPath">
+            <value>Bluezone-BC0197-mixed-falling-rubble-explosion-impact-007.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>16.93766439909297</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a0119123-d220-48d9-b13b-81fc7faea5cc}</destination>
+        </relationship>
+    </object>
+</objects>

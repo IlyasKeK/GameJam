@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{cba949d1-fad6-434b-bb25-8d6ba0817a3c}">
+        <property name="assetPath">
+            <value>FirePassBy_BW.75024.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.3919999999999999</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a0119123-d220-48d9-b13b-81fc7faea5cc}</destination>
+        </relationship>
+    </object>
+</objects>

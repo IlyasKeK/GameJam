@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e8f04653-dc48-4303-b33c-2aa1cbf0c103}">
+        <property name="assetPath">
+            <value>LEAD OUT DRUMS.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>10.549455782312926</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a0119123-d220-48d9-b13b-81fc7faea5cc}</destination>
+        </relationship>
+    </object>
+</objects>
