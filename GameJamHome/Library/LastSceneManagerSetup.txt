@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/IlyasScene.unity
+=======
+- path: Assets/Scenes/SampleScene.unity
+>>>>>>> develop
   isLoaded: 1
   isActive: 1

@@ -11,9 +11,13 @@ public class CannonBallBehaviour : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private GameManager Manager;
 
+Vector3 lastHitPos;
+
 	void Start () {
         Manager = GameManager.Instance();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        Debug.Log("I am created");
+        GameManager.Instance().ResolveCannonBallShot();
 	}
 	
 	void Update () {
@@ -44,5 +48,12 @@ public class CannonBallBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.Instance().ResolveEndRound();
+    }
+
+     void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, 1);
     }
 }

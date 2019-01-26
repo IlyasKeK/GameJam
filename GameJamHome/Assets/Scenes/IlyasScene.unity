@@ -801,6 +801,7 @@ MonoBehaviour:
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
+  playerData: {fileID: 0}
 --- !u!61 &169171241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1068,6 +1069,7 @@ MonoBehaviour:
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
+  playerData: {fileID: 0}
 --- !u!61 &336769380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1329,6 +1331,7 @@ MonoBehaviour:
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
+  playerData: {fileID: 0}
 --- !u!61 &509152503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1405,6 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565618828}
   - component: {fileID: 565618827}
+  - component: {fileID: 565618829}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1439,6 +1443,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565618829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565618826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6830343cdd865a8488a193fb36b2e330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialResources: 10
+  repairCost: 8
+  upgradeCannonCost: 5
 --- !u!1 &570624182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2575,7 @@ MonoBehaviour:
   sections:
   - {fileID: 1956446327}
   - {fileID: 169171237}
+  reources: 0
 --- !u!1 &1956446327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,6 +2703,7 @@ MonoBehaviour:
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
+  playerData: {fileID: 0}
 --- !u!1 &1989129602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2818,7 @@ MonoBehaviour:
   sections:
   - {fileID: 509152499}
   - {fileID: 336769376}
+  reources: 0
 --- !u!1 &2033546276
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class PlayerData : MonoBehaviour {
     private Image SpriteImage;
 
     public List<GameObject> sections = new List<GameObject>();
+    [HideInInspector]
+    public int reources = 0;
 
     private Cannon m_cannon;
     private int IdleIndex;
@@ -26,6 +28,15 @@ public class PlayerData : MonoBehaviour {
 	void Start () {
         m_cannon = GetComponent<Cannon>();
 
+        reources = ResourceManager.Instance().initialResources;
+
+        foreach (GameObject section in sections)
+        {
+            if (section.GetComponent<SectionData>())
+            {
+                section.GetComponent<SectionData>().playerData = this;
+            }
+        }
         if (SpriteImage != null && IdleSprites.Length > 0)
         {
             SpriteImage.sprite = IdleSprites[0];

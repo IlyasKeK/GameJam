@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\Users\Coen\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.postprocessing@2.1.2
+=======
+C:\Users\guilk\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.postprocessing@2.1.2
+>>>>>>> develop
