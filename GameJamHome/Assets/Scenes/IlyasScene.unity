@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 16286424}
   - component: {fileID: 16286423}
   - component: {fileID: 16286422}
+  - component: {fileID: 16286425}
   m_Layer: 5
   m_Name: RematchButton
   m_TagString: Untagged
@@ -188,7 +189,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 16286423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 16286425}
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &16286423
@@ -224,6 +236,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 16286420}
+--- !u!114 &16286425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16286420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7488d6c8cb5e44a9316fb517c4f985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &19357897
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &357740986
 MonoBehaviour:
@@ -893,6 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa714c694ecec542a55057286fe06e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_resolutionScreen: {fileID: 1720234541}
 --- !u!4 &565618828
 Transform:
   m_ObjectHideFlags: 0
@@ -904,7 +928,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &570624182
 GameObject:
@@ -966,7 +990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647675853
 GameObject:
@@ -1310,7 +1334,7 @@ Transform:
   - {fileID: 169171238}
   - {fileID: 1820951095}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1327572567
 GameObject:
@@ -1433,7 +1457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720234541
 GameObject:
@@ -1522,7 +1546,7 @@ RectTransform:
   m_Children:
   - {fileID: 1094642142}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1542,7 +1566,7 @@ GameObject:
   - component: {fileID: 1820951092}
   - component: {fileID: 1820951096}
   m_Layer: 0
-  m_Name: GameGoal
+  m_Name: Boiler_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1639,6 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd9ff6baa43e5b45bc09a52994a1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
 --- !u!1 &1956446327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,5 +2009,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
