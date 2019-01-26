@@ -5,6 +5,8 @@ using UnityEngine;
 public class CannonBallBehaviour : MonoBehaviour
 {
     [SerializeField]
+    private int m_damage=1;
+    [SerializeField]
     private Vector2 m_initialForce=new Vector2(1,-1);
 
     private Rigidbody2D m_rigidbody2D;
@@ -23,7 +25,8 @@ public class CannonBallBehaviour : MonoBehaviour
         if (collision.collider.GetComponent<SectionCompleteState>())
         {
             Debug.Log("Collidedwith Destroyable Object");
-            collision.collider.GetComponent<SectionCompleteState>().DealDamage(200);
+            collision.collider.GetComponent<SectionCompleteState>().DealDamage(m_damage);
+            Destroy(gameObject);
         }
     }
 }

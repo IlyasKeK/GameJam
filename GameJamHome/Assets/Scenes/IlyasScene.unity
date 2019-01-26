@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c638a6a287ce2aa4caa83dba5f3e7de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoint: 3
+  healthPoints: 3
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c638a6a287ce2aa4caa83dba5f3e7de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoint: 3
+  healthPoints: 3
   m_initialMaterial: {fileID: 2100000, guid: d1ebe761da7df154eb7d0902ca1f1651, type: 2}
   m_highlightMaterial: {fileID: 2100000, guid: ec2fa7b7cf31f204f9ca3e7db9651962, type: 2}
   m_destroyedMaterial: {fileID: 2100000, guid: 2f21ba7cd8e858d46967e21c432969a2, type: 2}
