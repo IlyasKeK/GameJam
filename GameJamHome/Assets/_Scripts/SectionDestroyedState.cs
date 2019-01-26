@@ -8,6 +8,7 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
     private BoxCollider2D m_collider2D;
     private MeshRenderer m_meshRenderer;
     private SectionData m_sectionData;
+    private SectionFSM m_sectionFSM;
 
     public void Start()
     {
@@ -21,6 +22,7 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
         if (!m_sectionData) m_sectionData = GetComponent<SectionData>();
         if (!m_collider2D) m_collider2D = GetComponent<BoxCollider2D>();
         if (!m_meshRenderer) m_meshRenderer = GetComponent<MeshRenderer>();
+        if (!m_sectionFSM) m_sectionFSM = GetComponent<SectionFSM>();
 
         m_meshRenderer.material = m_sectionData.m_destroyedMaterial;
 
@@ -35,11 +37,14 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
     public override void Exit(IAgent pAgent)
     {
         base.Exit(pAgent);
+        DisableObject(false);
+        m_meshRenderer.material = m_sectionData.m_initialMaterial;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("CLICK");
+        m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
