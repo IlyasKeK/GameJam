@@ -10,9 +10,11 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
     private SectionData m_sectionData;
     private SectionFSM m_sectionFSM;
 
+    public bool isMyTurn = false;
+
     public void Start()
     {
-        Debug.Log("COllider is ready");
+        Debug.Log("Collider is ready");
     }
 
     public override void Enter(IAgent pAgent)
@@ -43,17 +45,19 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("CLICK");
+        if (!isMyTurn) return;
         m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!isMyTurn) return;
         HighlightObject(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!isMyTurn) return;
         HighlightObject(false);
     }
 
