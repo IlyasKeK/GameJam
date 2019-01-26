@@ -22,9 +22,14 @@ public class CannonBallBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.GetComponent<BoilerBehaviour>())
+        {
+            collision.collider.GetComponent<BoilerBehaviour>().DestroyBoiler();
+            Destroy(gameObject);
+        }
+
         if (collision.collider.GetComponent<SectionCompleteState>())
         {
-            Debug.Log("Collidedwith Destroyable Object");
             collision.collider.GetComponent<SectionCompleteState>().DealDamage(m_damage);
             Destroy(gameObject);
         }
