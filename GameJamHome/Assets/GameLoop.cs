@@ -9,6 +9,10 @@ public class GameLoop : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Cannons = FindObjectsOfType<Cannon>();
+
+        if (Cannons.Length < 1)
+            return;
+
         NextTurn();
 
         for (int i = 0; i < Cannons.Length; i++)
@@ -24,7 +28,8 @@ public class GameLoop : MonoBehaviour {
 
     public void NextTurn()
     {
-        if (Cannons.Length < 1) return;
+        if (Cannons.Length < 1)
+            return;
 
         Cannons[CannonIndex].ResetFire();
         CannonIndex++;
