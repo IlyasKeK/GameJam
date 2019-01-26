@@ -23,7 +23,7 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
         if (!m_collider2D)   m_collider2D = GetComponent<BoxCollider2D>();
         if (!m_meshRenderer) m_meshRenderer = GetComponent<MeshRenderer>();
         if (!m_sectionFSM)   m_sectionFSM = GetComponent<SectionFSM>();
-
+        
         m_meshRenderer.material = m_sectionData.m_destroyedMaterial;
         DisableObject();
     }
