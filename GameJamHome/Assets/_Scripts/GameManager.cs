@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour
 {
     [Header("Players")]
     [SerializeField]
-    private PlayerData m_player1;
+    public PlayerData m_player1;
     [SerializeField]
-    private PlayerData m_player2;
+    public PlayerData m_player2;
     [Header("Settings")]
     [SerializeField]
     private GameObject m_resolutionScreen;

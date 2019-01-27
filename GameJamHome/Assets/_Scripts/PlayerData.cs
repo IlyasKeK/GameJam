@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,12 +19,22 @@ public class PlayerData : MonoBehaviour {
     private Image SpriteImage;
 
     public List<GameObject> sections = new List<GameObject>();
+
+    private int m_resources = 0;
     [HideInInspector]
-    public int reources = 0;
+    public int reources {
+        get { return m_resources; }
+        set
+        {
+            m_resources = value;
+            if (onResourcesChanged != null) onResourcesChanged(value);
+        } }
 
     private Cannon m_cannon;
     private int IdleIndex;
     private float TimerToIdle;
+
+    public Action<float> onResourcesChanged;
 
 	void Start () {
         m_cannon = GetComponent<Cannon>();
@@ -65,7 +76,7 @@ public class PlayerData : MonoBehaviour {
         if (gotHit) { SpriteImage.sprite = AngrySprite; }
         else { SpriteImage.sprite = HappySprite; }
 
-        TimerToIdle = Random.Range(1,3); 
+        TimerToIdle = UnityEngine.Random.Range(1,3); 
     }
 
     public void ActivatePlayer()
