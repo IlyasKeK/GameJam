@@ -37,6 +37,8 @@ public class PlayerData : MonoBehaviour {
 
     public Action<float> onResourcesChanged;
 
+    public int levelOfCannon = 1;
+
 	void Start () {
         m_cannon = GetComponent<Cannon>();
 
@@ -96,4 +98,15 @@ public class PlayerData : MonoBehaviour {
             }
         }
     }
+
+    public void UpgradeCannon()
+    {
+        if (GameManager.Instance().GetCurrentPlayer() != this) return;
+        if (resources - ResourceManager.Instance().upgradeCannonCost >= 0)
+        {
+            resources -= ResourceManager.Instance().upgradeCannonCost;
+            levelOfCannon++;
+        }
+    }
+
 }

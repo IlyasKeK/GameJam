@@ -44,6 +44,12 @@ public class GameManager : MonoBehaviour
 		
 	}
 
+    public PlayerData GetCurrentPlayer()
+    {
+        if (m_isPlayerOneTurn) return m_player2;
+        else return m_player1;
+    }
+
     public void ResolveEndGame(BoilerBehaviour boilerBehaviour)
     {
         //TODO fix after smoke
