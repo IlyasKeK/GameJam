@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class GameManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField]
     private GameObject m_resolutionScreen;
+
+    [SerializeField]
+    private Sprite P1Turn;
+
+    [SerializeField]
+    private Sprite P2Turn;
+
+    [SerializeField]
+    private Image TurnImage;
 
     private static GameManager m_instance;
 
@@ -60,6 +70,17 @@ public class GameManager : MonoBehaviour
         }
 
         m_isPlayerOneTurn = !m_isPlayerOneTurn;
+
+        if (TurnImage == null) return;
+
+        if(m_isPlayerOneTurn)
+        {
+            TurnImage.sprite = P1Turn;
+        }
+        else
+        {
+            TurnImage.sprite = P2Turn;
+        }
     }
 
     public void ResolveCannonBallShot()
