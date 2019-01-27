@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class CannonBallBehaviour : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class CannonBallBehaviour : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private GameManager m_manager;
 
+    public FMOD_StudioEventEmitter eventEmitter;
+
     public float lifeTime = 5;
     private float m_timeOfConstruction;
     Vector3 lastHitPos;
 
 	void Start () {
+        
         m_manager = GameManager.Instance();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -70,6 +74,13 @@ public class CannonBallBehaviour : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, m_radius);
         foreach (Collider2D collider in colliders)
         {
+            if (collider.GetComponent<BoilerBehaviour>())
+            {
+                collider.GetComponent<BoilerBehaviour>().DestroyBoiler();
+                //Destroy(gameObject);
+                return;
+            }
+
             if (collider.GetComponent<SectionCompleteState>() && collider.GetComponent<SectionCompleteState>().enabled)
             {
                 collider.GetComponent<SectionCompleteState>().DealDamage(200);
