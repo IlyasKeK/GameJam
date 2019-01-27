@@ -13,7 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114165578432289460}
+<<<<<<< HEAD
   - {fileID: 114445751666172050}
+=======
+  - {fileID: 114134849950953784}
+>>>>>>> collisions
   EditorEvents:
   - {fileID: 114924872604160636}
   - {fileID: 114880042683764782}
@@ -21,9 +25,14 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 114074028130810016}
   - {fileID: 114576330381501322}
+  - {fileID: 114134849950953784}
   StringsBanks:
   - {fileID: 114165578432289460}
+<<<<<<< HEAD
   stringsBankWriteTime: 636841463450598869
+=======
+  stringsBankWriteTime: 636841650900477762
+>>>>>>> collisions
   cacheVersion: 3
 --- !u!114 &114007174782638946
 MonoBehaviour:
@@ -59,6 +68,40 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2777440
   Exists: 0
+--- !u!114 &114085006010630410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: filter
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114134849950953784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Indie game\GameJam\GameJamHome\Assets\FMOD\neighbours\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636841650900636477
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2777440
+  Exists: 1
 --- !u!114 &114165578432289460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\neighbours\Build\Desktop\Master Bank.strings.bank
+<<<<<<< HEAD
   lastModified: 636841463450598869
+=======
+  lastModified: 636841650900477762
+>>>>>>> collisions
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -136,7 +183,11 @@ MonoBehaviour:
   Path: event:/impact
   guid: eacfaac8380fc6428f6815e589015912
   Banks:
+<<<<<<< HEAD
   - {fileID: 114445751666172050}
+=======
+  - {fileID: 114134849950953784}
+>>>>>>> collisions
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -144,6 +195,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4000
+--- !u!114 &114265606385920522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: drums
+  Min: 0
+  Max: 1
+  Default: 1
 --- !u!114 &114270440360444604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +353,21 @@ MonoBehaviour:
   Min: 2
   Max: 7
   Default: 2
+--- !u!114 &114771667246522496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progression
+  Min: 2
+  Max: 7
+  Default: 2
 --- !u!114 &114850523918740782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +416,11 @@ MonoBehaviour:
   Path: event:/explosion
   guid: cb24fdefb1a55a4781b3dff81cc91f7d
   Banks:
+<<<<<<< HEAD
   - {fileID: 114445751666172050}
+=======
+  - {fileID: 114134849950953784}
+>>>>>>> collisions
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -357,14 +442,24 @@ MonoBehaviour:
   Path: event:/music
   guid: c27b18d53e36e44bb55cbc711555c8d3
   Banks:
+<<<<<<< HEAD
   - {fileID: 114445751666172050}
+=======
+  - {fileID: 114134849950953784}
+>>>>>>> collisions
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
   - {fileID: 114568037393914554}
   - {fileID: 114352060311520228}
   - {fileID: 114853808360270962}
+=======
+  - {fileID: 114771667246522496}
+  - {fileID: 114085006010630410}
+  - {fileID: 114265606385920522}
+>>>>>>> collisions
   MinDistance: 0
   MaxDistance: 0
   Length: 110769
