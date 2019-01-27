@@ -17,8 +17,6 @@ public class CannonBallBehaviour : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private GameManager m_manager;
 
-    public FMOD_StudioEventEmitter eventEmitter;
-
     public float lifeTime = 5;
     private float m_timeOfConstruction;
     Vector3 lastHitPos;
@@ -27,6 +25,8 @@ public class CannonBallBehaviour : MonoBehaviour
         
         m_manager = GameManager.Instance();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+
+        MusicEmitterHandler.Instance().RandomizePorgression();
 
         Debug.Log("I am created");
         GameManager.Instance().ResolveCannonBallShot();
@@ -71,12 +71,15 @@ public class CannonBallBehaviour : MonoBehaviour
 
     public void Explode()
     {
+        lastSCRIPT.Instance().PlayExplosion();
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, m_radius);
         foreach (Collider2D collider in colliders)
         {
             if (collider.GetComponent<BoilerBehaviour>())
             {
                 collider.GetComponent<BoilerBehaviour>().DestroyBoiler();
+                
                 //Destroy(gameObject);
                 return;
             }
