@@ -10,7 +10,7 @@ public class ResourceManager : MonoBehaviour
 
     private static ResourceManager m_instance;
 
-    void Start ()
+    void Awake ()
     {
         m_instance = this;
     }

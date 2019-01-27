@@ -14,12 +14,24 @@ public class ResourceText : MonoBehaviour {
 	void Start () {
         m_text = GetComponent<Text>();
 
-        if (player == Player.ONE) GameManager.Instance().m_player1.onResourcesChanged += UpdateResourceText;
-        else                      GameManager.Instance().m_player1.onResourcesChanged += UpdateResourceText;
+        UpdateResourceText( ResourceManager.Instance().initialResources );
+
+        if (player == Player.ONE)
+        {
+            Debug.Log("Initiate playerOne");
+            GameManager.Instance().m_player1.onResourcesChanged += UpdateResourceText;
+        }
+        if (player == Player.TWO)
+        {
+            Debug.Log("Initiate playerTwo");
+            GameManager.Instance().m_player2.onResourcesChanged += UpdateResourceText;
+        }
+
     }
 
     void UpdateResourceText(float newValue)
     {
+        Debug.Log("New value in TEXT_OBJECT " + newValue);
         m_text.text = "" + newValue;
     }
 	

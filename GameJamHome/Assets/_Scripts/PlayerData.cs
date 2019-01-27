@@ -22,11 +22,12 @@ public class PlayerData : MonoBehaviour {
 
     private int m_resources = 0;
     [HideInInspector]
-    public int reources {
+    public int resources {
         get { return m_resources; }
         set
         {
             m_resources = value;
+            Debug.Log("Caling ACTION " + value);
             if (onResourcesChanged != null) onResourcesChanged(value);
         } }
 
@@ -39,8 +40,8 @@ public class PlayerData : MonoBehaviour {
 	void Start () {
         m_cannon = GetComponent<Cannon>();
 
-        reources = ResourceManager.Instance().initialResources;
-
+        resources = ResourceManager.Instance().initialResources;
+        Debug.Log("Current resource amount "+m_resources);
         foreach (GameObject section in sections)
         {
             if (section.GetComponent<SectionData>())
