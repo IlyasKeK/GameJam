@@ -25,7 +25,6 @@ public class Chargebar : MonoBehaviour {
 
     void UpdateSliderValues(float newValue)
     {
-        Debug.Log("        new VALUE IS  " + newValue);
         m_slider.value = newValue;
     }
 

@@ -55,6 +55,18 @@ public class GameManager : MonoBehaviour
         //TODO fix after smoke
         Debug.Log("Player " + boilerBehaviour.player + " LOST"); //Other player is won,not owner of destroyed boiler
         m_resolutionScreen.SetActive(true);
+
+        if (boilerBehaviour.player == BoilerBehaviour.Player.ONE)
+        {
+            ResolutionScreen.Instance().SetWinner(2);
+        }
+        else
+        {
+            ResolutionScreen.Instance().SetWinner(1);
+        }
+
+        m_player1.cannon.enabled = false;
+        m_player2.cannon.enabled = false;
     }
 
     public void ResolveEndRound()

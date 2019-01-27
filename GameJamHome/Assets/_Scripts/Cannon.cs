@@ -40,7 +40,7 @@ public class Cannon : MonoBehaviour {
             if (onPowerChanges != null) onPowerChanges(value);
         } }
     private float m_currentFP = 0;
-    private bool _canFire = false;
+    public bool _canFire = false;
     private Vector3 CachedVelocity;
 
     public float maxPower { get { return _MaxFirePower; } }
