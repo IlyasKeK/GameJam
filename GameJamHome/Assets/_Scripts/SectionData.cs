@@ -6,6 +6,8 @@ public class SectionData : MonoBehaviour
 {
     public int healthPoints = 2;
 
+    public GameObject explosion;
+
     public Material m_initialMaterial;
     public Material m_highlightMaterial;
     public Material m_destroyedMaterial;

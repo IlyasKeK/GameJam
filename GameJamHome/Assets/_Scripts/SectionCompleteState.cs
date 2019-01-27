@@ -35,6 +35,7 @@ public class SectionCompleteState :AbstractState<SectionFSM>
         if (m_healthPoints <= 0)
         {
             m_healthPoints = 0;
+            GameManager.Instance().ResolveDestruction();
             m_sectionFSM.fsm.ChangeState<SectionDestroyedState>();
         }
     }

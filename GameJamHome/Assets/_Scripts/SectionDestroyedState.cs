@@ -46,7 +46,13 @@ public class SectionDestroyedState : AbstractState<SectionFSM>, IPointerClickHan
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!isMyTurn) return;
-        m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
+
+        if (m_sectionData.playerData.resources - ResourceManager.Instance().repairCost >= 0)
+        {
+            m_sectionData.playerData.resources -= ResourceManager.Instance().repairCost;
+            m_sectionFSM.fsm.ChangeState<SectionCompleteState>();
+        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)

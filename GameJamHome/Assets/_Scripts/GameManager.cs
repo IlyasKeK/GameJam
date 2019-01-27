@@ -44,6 +44,12 @@ public class GameManager : MonoBehaviour
 		
 	}
 
+    public PlayerData GetCurrentPlayer()
+    {
+        if (m_isPlayerOneTurn) return m_player2;
+        else return m_player1;
+    }
+
     public void ResolveEndGame(BoilerBehaviour boilerBehaviour)
     {
         //TODO fix after smoke
@@ -54,8 +60,7 @@ public class GameManager : MonoBehaviour
     public void ResolveEndRound()
     {
         //Calling global event in the end of the round
-        //if (null == onEndRound) return;
-        Debug.Log("1: "+m_isPlayerOneTurn);
+
         if (m_isPlayerOneTurn)
         {
             m_player1.ActivatePlayer();
@@ -94,6 +99,18 @@ public class GameManager : MonoBehaviour
     {
         m_player1.HitResponsePlayer(m_isPlayerOneTurn);
         m_player2.HitResponsePlayer(!m_isPlayerOneTurn);
+    }
+
+    public void ResolveDestruction()
+    {
+        if (m_isPlayerOneTurn)
+        {
+            m_player2.resources++;
+        }
+        else
+        {
+            m_player1.resources++;
+        }
     }
         
     public static GameManager Instance()
