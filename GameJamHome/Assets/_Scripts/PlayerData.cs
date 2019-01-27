@@ -32,6 +32,7 @@ public class PlayerData : MonoBehaviour {
         } }
 
     private Cannon m_cannon;
+    public Cannon cannon { get { return m_cannon; } }
     private int IdleIndex;
     private float TimerToIdle;
 

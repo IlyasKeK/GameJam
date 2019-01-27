@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,10 +30,22 @@ public class Cannon : MonoBehaviour {
     [SerializeField]
     private bool _CanShootPositiveX = false;
 
+    public Action<float> onPowerChanges;
+
     private GameObject _CannonBall;
-    private float _currentFirePower = 0;
+    private float _currentFirePower { get { return m_currentFP; }
+        set
+        {
+            m_currentFP = value;
+            if (onPowerChanges != null) onPowerChanges(value);
+        } }
+    private float m_currentFP = 0;
     private bool _canFire = false;
     private Vector3 CachedVelocity;
+
+    public float maxPower { get { return _MaxFirePower; } }
+    public float currentPower { get { return _currentFirePower; } }
+    public float minPower { get { return _MinFirePower; } }
 
     UnityEvent ShotCannon = new UnityEvent();
 
